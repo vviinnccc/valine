@@ -18,6 +18,7 @@
         v-model="text"
         @input="inputInfo()"
         name="valine"
+        @keydown="tab($event)"
       ></textarea>
       <div class="valine-top-bottom">
         <a href="#">Emoji</a> |
@@ -27,6 +28,7 @@
         <button type="button">回复</button>
       </div>
     </div>
+    <!-- <div :key="markdown" v-markdown>{{markdown}}</div> -->
   </div>
 </template>
 
@@ -37,7 +39,8 @@ export default {
     return {
       user: "",
       email: "",
-      text: ""
+      text: "### hello word",
+      markdown: ""
     };
   },
   methods: {
@@ -49,6 +52,12 @@ export default {
     inputInfo() {
       let textArea = document.getElementById("valineArea");
       textArea.style.height = "150px";
+    },
+    tab(e) {
+      if (e.keyCode == 9) {
+        this.text = this.text + "  ";
+        e.returnValue = false;
+      }
     }
   },
   watch: {
@@ -74,8 +83,8 @@ textarea {
 }
 
 .valine {
-  max-width: 700px;
-  width: 700px;
+  max-width: 740px;
+  width: 740px;
   margin-left: 5%;
   margin-right: 5%;
   border: 1px solid #f0f0f0;
@@ -102,6 +111,7 @@ textarea {
     margin-bottom: 5px;
     margin-top: 10px;
     border: 0;
+    outline: none;
     line-height: 2;
     resize: none;
   }

@@ -28,23 +28,20 @@ th,
 ul {
   margin: 0;
   padding: 0;
-
 }
-
-
 
 /* 去掉标签默认的斜体 */
-em,
-i {
-  font-style: normal;
-}
+// em,
+// i {
+//   font-style: normal;
+// }
 
 /* 去掉li的小圆点 */
-li,
-ol,
-ul {
-  list-style: none;
-}
+// li,
+// ol,
+// ul {
+//   list-style: none;
+// }
 
 /* 将img对齐模式改为中间对齐，取消底部空隙，border照顾老版本浏览器出现边框问题 */
 img {
@@ -59,7 +56,7 @@ button {
 
 /* 规定颜色，取消下线 */
 a {
-  color: #666;
+  // color: #666;
   text-decoration: none;
 }
 
